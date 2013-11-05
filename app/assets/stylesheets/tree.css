@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+#file-tree {
+  padding-top: 1px;
+}
+#file-tree pre {
+  border-size: 1px;
+  border: 1px solid #888;
+  overflow-x: scroll;
+}
+#file-content {
+  height: 100%;
+}
+#file-content pre {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}

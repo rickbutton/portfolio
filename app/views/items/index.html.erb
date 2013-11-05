@@ -1,0 +1,28 @@
+<% content_for :title, "Projects" %>
+<div class="container">
+<h1 class="header text-center">Projects</h1>
+<% @items.each do |item| %>
+  <div class="row">
+    <div class="col-md-6">
+      <% if item.has_code %>
+        <a href="<%= item_path(item) %>">
+          <img class="thumbnail" src="<%= item.main_image %>">
+        </a>
+      <% else %>
+        <img class="thumbnail" src="<%= item.main_image %>">
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class='well'>
+        <h3><%= item.name %></h3>
+        <%= item.description %>
+        <% if item.has_code %>
+        <h4><%= link_to "Check out the source", item_path(item) %></h4>
+        <% else %>
+        <h4>Closed source</h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

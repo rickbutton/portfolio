@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio - <%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= yield :css %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield :js %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield %>
+  <hr>
+  <h5 class="footer text-center">Made for the guys a philosophie by Rick Button</h5>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<span id="page-id" data-id="<%= @item.slug %>"></span>
+<% content_for :title, @item.name %>
+<%= content_for :js do %>
+  <%= javascript_include_tag "tree" %>
+  <%= javascript_include_tag "highlight/prettify" %>
+<% end %>
+<%= content_for :css do %>
+  <%= stylesheet_link_tag    "highlight/prettify", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+<div class="container">
+<h1 class="text-center"><%= @item.name %></h1>
+<h3 class="header text-center">File Browser</h3>
+<h4 class="text-right"><%= link_to "Back to projects", items_path %></h4>
+<hr>
+<div class="row">
+  <div class="col-md-3" id="file-tree">
+    <pre>
+    Loading...
+    </pre>
+  </div>
+  <div class="col-md-9" id="file-content">
+    <pre class="prettyprint">Select a file from the left hand file tree</pre>
+  </div>
+</div>
